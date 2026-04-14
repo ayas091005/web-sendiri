@@ -107,20 +107,7 @@
 
 <div class="page-wrapper">
 
-  <!-- ===== DISCLAIMER (Moved to Top) ===== -->
-  <section class="section" style="padding-top: 2rem; padding-bottom: 0;">
-    <div class="container">
-      <div class="disclaimer-banner" style="border-color: var(--danger); background: rgba(239, 68, 68, 0.1);">
-        <i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i>
-        <span style="color: #FFBAB6;">
-          <strong style="color: var(--danger);">Disclaimer:</strong> OrganCek adalah alat <em>skrining mandiri</em> berbasis gejala dan <strong>bukan merupakan alat diagnostik medis</strong>.
-          Hasil kuesioner ini tidak menggantikan pemeriksaan oleh tenaga medis profesional.
-          Selalu konsultasikan kondisi kesehatan Anda dengan dokter yang berkompeten.
-          Data Anda <strong>tidak disimpan</strong> dan akan terhapus otomatis saat browser ditutup.
-        </span>
-      </div>
-    </div>
-  </section>
+
 
   <!-- ===== HERO ===== -->
   <section class="hero">
@@ -143,7 +130,16 @@
     </div>
 
     <div class="hero-content">
-      <div class="hero-badge anim-fadeup" style="opacity:0">
+      <!-- Disclaimer inside Hero for Full Page experience -->
+      <div class="disclaimer-banner anim-fadeup" style="border-color: var(--danger); background: rgba(239, 68, 68, 0.1); margin-bottom: 2rem; opacity:0; width: 100%; text-align: left;">
+        <i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i>
+        <span style="color: #FFBAB6; font-size: 0.85rem;">
+          <strong style="color: var(--danger);">Disclaimer:</strong> OrganCek adalah alat <em>skrining mandiri</em> dan <strong>bukan alat diagnostik medis</strong>.
+          Hasil ini tidak menggantikan saran dokter. Data Anda <strong>tidak disimpan</strong>.
+        </span>
+      </div>
+
+      <div class="hero-badge anim-fadeup delay-1" style="opacity:0">
         <i class="fa-solid fa-circle-check"></i>
         Gratis · Tanpa Login · Privasi Terjaga
       </div>
