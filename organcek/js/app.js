@@ -187,10 +187,11 @@ const Session = {
 // ============================================================
 // SCORE UTILITIES
 // ============================================================
-function calculateScore(answers) {
-  // answers: array of numbers 0-3, length = 10
-  const total = answers.reduce((a, b) => a + b, 0);
-  return Math.round((total / (QUESTIONS.jantung.length * 3)) * 100);
+function calculateScore(answers, organId) {
+  // answers: array of numbers 0-3
+  const total = answers.reduce((a, b) => a + (b || 0), 0);
+  const maxPossible = QUESTIONS[organId].length * 3;
+  return Math.round((total / maxPossible) * 100);
 }
 
 function getRiskLevel(score) {

@@ -302,7 +302,7 @@ function finishQuiz() {
   const scores = {};
   selectedOrgans.forEach(id => {
     const ans = answers[id];
-    scores[id] = calculateScore(ans);
+    scores[id] = calculateScore(ans, id);
   });
 
   // Save to session
