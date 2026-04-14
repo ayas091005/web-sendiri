@@ -553,7 +553,7 @@ footer a:hover { text-decoration: underline; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: calc(var(--nav-height) + 1rem) 1.5rem 4rem;
+  padding: calc(var(--nav-height) + 2rem) 1.5rem 6rem;
   position: relative;
   overflow: hidden;
 }
@@ -607,10 +607,10 @@ footer a:hover { text-decoration: underline; }
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 1rem;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
   letter-spacing: -2px;
 }
 
@@ -623,11 +623,11 @@ footer a:hover { text-decoration: underline; }
 }
 
 .hero-desc {
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--text-secondary);
   max-width: 520px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
 }
 
 .hero-actions {
