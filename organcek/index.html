@@ -102,11 +102,25 @@
     <li><a href="kuesioner.html" class="nav-link" data-page="kuis">Kuesioner</a></li>
     <li><a href="hasil.html" class="nav-link" data-page="hasil">Hasil</a></li>
     <li><a href="edukasi.html" class="nav-link" data-page="edukasi">Edukasi</a></li>
-    <li><a href="kuesioner.html" class="nav-link nav-cta" id="cta-nav-btn">Mulai Cek →</a></li>
   </ul>
 </nav>
 
 <div class="page-wrapper">
+
+  <!-- ===== DISCLAIMER (Moved to Top) ===== -->
+  <section class="section" style="padding-top: 2rem; padding-bottom: 0;">
+    <div class="container">
+      <div class="disclaimer-banner" style="border-color: var(--danger); background: rgba(239, 68, 68, 0.1);">
+        <i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i>
+        <span style="color: #FFBAB6;">
+          <strong style="color: var(--danger);">Disclaimer:</strong> OrganCek adalah alat <em>skrining mandiri</em> berbasis gejala dan <strong>bukan merupakan alat diagnostik medis</strong>.
+          Hasil kuesioner ini tidak menggantikan pemeriksaan oleh tenaga medis profesional.
+          Selalu konsultasikan kondisi kesehatan Anda dengan dokter yang berkompeten.
+          Data Anda <strong>tidak disimpan</strong> dan akan terhapus otomatis saat browser ditutup.
+        </span>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== HERO ===== -->
   <section class="hero">
@@ -153,7 +167,7 @@
         </a>
       </div>
 
-      <div class="stats-row mt-4 anim-fadeup delay-4" style="opacity:0">
+      <div class="stats-row anim-fadeup delay-4" style="opacity:0; margin-top: 5rem;">
         <div class="stat-pill">
           <span class="num">4</span>
           <span class="lbl">Organ Dicek</span>
@@ -173,29 +187,16 @@
       </div>
     </div>
 
-    <div class="hero-scroll-hint">
+    <a href="#organ-target" class="hero-scroll-hint" style="text-decoration: none; cursor: pointer;">
       <span>Scroll ke bawah</span>
       <div class="scroll-arrow"><i class="fa-solid fa-chevron-down" style="font-size:0.7rem"></i></div>
-    </div>
+    </a>
   </section>
 
-  <!-- ===== DISCLAIMER ===== -->
-  <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
-    <div class="container">
-      <div class="disclaimer-banner">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        <span>
-          <strong>Disclaimer:</strong> OrganCek adalah alat <em>skrining mandiri</em> berbasis gejala dan <strong>bukan merupakan alat diagnostik medis</strong>.
-          Hasil kuesioner ini tidak menggantikan pemeriksaan oleh tenaga medis profesional.
-          Selalu konsultasikan kondisi kesehatan Anda dengan dokter yang berkompeten.
-          Data Anda <strong>tidak disimpan</strong> dan akan terhapus otomatis saat browser ditutup.
-        </span>
-      </div>
-    </div>
-  </section>
+
 
   <!-- ===== 4 ORGAN CARDS ===== -->
-  <section class="section" style="padding-top: 2rem;">
+  <section class="section" style="padding-top: 2rem;" id="organ-target">
     <div class="container">
       <div class="text-center mb-4">
         <div class="section-label"><i class="fa-solid fa-heart-pulse"></i> Organ Yang Dicek</div>
