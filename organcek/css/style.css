@@ -553,7 +553,7 @@ footer a:hover { text-decoration: underline; }
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  padding: calc(var(--nav-height) + 0.5rem) 1.5rem 2rem;
+  padding: var(--nav-height) 1.5rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -597,13 +597,13 @@ footer a:hover { text-decoration: underline; }
   background: rgba(6, 182, 212, 0.1);
   border: 1px solid rgba(6, 182, 212, 0.25);
   border-radius: var(--radius-full);
-  padding: 0.45rem 1.1rem;
-  font-size: 0.78rem;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: var(--accent);
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .hero-title {
