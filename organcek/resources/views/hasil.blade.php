@@ -1,121 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hasil Kuesioner — OrganCek</title>
-  <meta name="description" content="Lihat hasil analisis kesehatan organ Anda beserta rekomendasi dan skor risiko." />
-  <link rel="stylesheet" href="/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Asesmen - OrganCek</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <style>
-    .empty-state {
-      text-align: center;
-      padding: 5rem 1rem;
-    }
-
-    .empty-state .empty-icon {
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
-      opacity: 0.4;
-    }
-
-    .empty-state h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: var(--text-secondary);
-    }
-
-    .empty-state p {
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-    }
-
-    /* Radar chart */
-    .radar-container {
-      max-width: 380px;
-      margin: 0 auto;
-    }
-
-    /* Print results area */
-
-    /* Loading spinner */
-    .chart-spinner {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .spinner {
-      width: 24px;
-      height: 24px;
-      border: 2px solid var(--border);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    .summary-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    @media (max-width: 480px) {
-      .summary-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .summary-mini {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1rem 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-    }
-
-    .summary-mini .mini-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .summary-mini .mini-name {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .summary-mini .mini-score {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-      line-height: 1;
-      margin-top: 0.1rem;
-    }
-  </style>
 </head>
-
 <body>
-
-  <!-- NAVBAR -->
   <nav class="navbar">
     <a href="/" class="navbar-brand">
       <div class="navbar-logo"><i class="fa-solid fa-stethoscope"></i></div>
@@ -123,120 +16,80 @@
     </a>
     <ul class="navbar-nav">
       <li><a href="/" class="nav-link" data-page="home">Beranda</a></li>
-      <li><a href="/kuesioner" class="nav-link" data-page="kuis">Kuesioner</a></li>
+      <li><a href="/asesmen" class="nav-link" data-page="kuis">Asesmen</a></li>
       <li><a href="/hasil" class="nav-link active" data-page="hasil">Hasil</a></li>
       <li><a href="/edukasi" class="nav-link" data-page="edukasi">Edukasi</a></li>
     </ul>
   </nav>
 
   <div class="page-wrapper">
-    <!-- ===== DISCLAIMER (Moved to Top) ===== -->
-    <section class="section" style="padding-top: 2.5rem; padding-bottom: 0;">
-      <div class="container">
-        <div class="disclaimer-banner" style="border-color: var(--danger); background: rgba(239, 68, 68, 0.1);">
-          <i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i>
-          <span style="color: #FFBAB6;">
-            <strong style="color: var(--danger);">Disclaimer:</strong> OrganCek adalah alat <em>skrining mandiri</em>
-            berbasis gejala dan <strong>bukan merupakan alat diagnostik medis</strong>.
-            Hasil kuesioner ini tidak menggantikan pemeriksaan oleh tenaga medis profesional.
-            Selalu konsultasikan kondisi kesehatan Anda dengan dokter yang berkompeten.
-            Data Anda <strong>tidak disimpan</strong> dan akan terhapus otomatis saat browser ditutup.
-          </span>
-        </div>
-      </div>
-    </section>
+    <div class="disclaimer-ribbon">
+      <i class="fa-solid fa-triangle-exclamation"></i> <strong>Disclaimer:</strong> Tes ini hanya untuk prediksi awal dan tidak menggantikan diagnosis medis profesional.
+    </div>
 
-    <div class="hasil-wrapper">
-
-      <!-- Empty state (shown if no results) -->
-      <div id="empty-state" class="empty-state hidden">
-        <div class="empty-icon">📋</div>
-        <h2>Belum Ada Hasil Kuesioner</h2>
-        <p>Silakan isi kuesioner terlebih dahulu untuk melihat hasil analisis kesehatan organ Anda.</p>
-        <a href="/kuesioner" class="btn btn-primary btn-lg">
-          <i class="fa-solid fa-play"></i> Mulai Kuesioner
-        </a>
+    <div class="page-wrapper" style="padding-top: 0rem;">
+      <div id="empty-state" class="container text-center hidden" style="padding: 8rem 1rem;">
+        <div style="font-size: 4.5rem; margin-bottom: 1.5rem; opacity: 0.5;">📋</div>
+        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--text-secondary); font-family: 'Poppins', sans-serif;">Belum Ada Hasil Kuesioner</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1rem; max-width: 500px; margin-left: auto; margin-right: auto;">Silakan isi kuesioner terlebih dahulu untuk melihat hasil analisis kesehatan organ Anda.</p>
+        <a href="/asesmen" class="btn btn-primary btn-lg"><i class="fa-solid fa-play"></i> Mulai Kuesioner</a>
       </div>
 
-      <!-- Results area -->
       <div id="results-area" class="hidden">
-
-        <!-- Header -->
-        <div class="hasil-header anim-fadeup">
-          <div class="section-label"><i class="fa-solid fa-chart-column"></i> Hasil Analisis</div>
-          <h1>Laporan <span class="gradient-text">Kesehatan Organmu</span></h1>
-          <p
-            style="color: var(--text-secondary); margin: 0 auto; max-width: 500px; margin-top: 0.5rem; font-size: 0.9rem;">
-            Berdasarkan jawaban kuesioner Anda, berikut adalah analisis risiko organ yang diperiksa.
-          </p>
-
-          <!-- Date/time -->
-          <div id="result-datetime" style="margin-top: 0.75rem; color: var(--text-muted); font-size: 0.8rem;"></div>
-        </div>
-
-        <!-- Printable area -->
         <div id="printable-area">
-
-          <!-- Summary overview chart -->
-          <div class="glass-card" style="padding: 2rem; margin-bottom: 2rem; text-align: center;" id="summary-card">
-            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem;">Ringkasan Skor Risiko</h3>
-            <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem;">Semakin rendah skor, semakin
-              baik kondisi organ Anda</p>
-            <div class="radar-container">
-              <canvas id="radarChart"></canvas>
+          <section class="section" style="padding-top: 2rem; padding-bottom: 0; text-align: center;">
+            <div class="container">
+              <h1 style="font-family: 'Poppins', sans-serif; font-weight: 900; font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 0.75rem; letter-spacing: -1px;">
+                Laporan <span class="gradient-text">Kesehatan Organmu</span>
+              </h1>
+              <p style="color: var(--text-secondary); font-size: 1.05rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                Berdasarkan jawaban kuesioner Anda, berikut adalah analisis risiko organ yang diperiksa.
+              </p>
             </div>
-            <!-- mini summary grid -->
-            <div class="summary-grid" id="summary-mini-grid"></div>
-          </div>
+            <div class="disclaimer-banner" style="margin-top: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; text-align: left;">
+              <i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i>
+              <span style="color: #FFBAB6; font-size: 0.85rem;">
+                <strong style="color: var(--danger);">Penting:</strong> Data Anda <strong><U>TIDAK DISIMPAN</U></strong> di server dan akan terhapus otomatis saat browser ditutup atau kuesioner diulangi. Silakan unduh hasil Anda untuk menyimpannya.
+              </span>
+            </div>
+          </section>
 
-          <!-- Per-organ result cards -->
-          <div id="organ-results-list"></div>
-
-          <!-- Disclaimer inside printable -->
-          <div class="disclaimer-banner mt-4">
-            <i class="fa-solid fa-triangle-exclamation"></i>
-            <span>
-              <strong>Disclaimer:</strong> Hasil ini adalah skrining mandiri berbasis gejala yang dilaporkan sendiri dan
-              <strong>bukan merupakan diagnosis medis</strong>.
-              Selalu konsultasikan kondisi Anda dengan dokter atau tenaga medis profesional.
-              Hasil ini hanya berlaku selama sesi browser aktif.
-            </span>
-          </div>
+          <section class="section" style="padding-top: 1rem;">
+            <div class="container">
+              <div class="laporan-grid" id="laporan-grid">
+                <!-- Dynamically filled by javascript -->
+              </div>
+            </div>
+          </section>
         </div>
 
-        <!-- Actions -->
-        <div class="hasil-actions">
-          <h3>Simpan Hasil Anda</h3>
-          <p>Unduh laporan ini dalam format PDF untuk dibawa ke dokter atau disimpan sebagai referensi.</p>
-          <div class="hasil-btn-row">
-            <button id="btn-download-pdf" class="btn btn-primary btn-lg">
-              <i class="fa-solid fa-file-pdf"></i> Unduh PDF
-            </button>
-            <a href="/edukasi" class="btn btn-outline btn-lg">
-              <i class="fa-solid fa-book-open"></i> Lihat Panduan Edukasi
-            </a>
-            <a href="/kuesioner" class="btn btn-secondary btn-lg">
-              <i class="fa-solid fa-rotate-left"></i> Ulangi Kuesioner
-            </a>
+        <section class="section" style="padding-top: 0rem;">
+          <div class="container">
+            <div class="action-area">
+              <div style="display: flex; gap: 1rem; margin-top: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button id="btn-download-pdf" class="btn btn-primary btn-lg anim-pulse" style="display: inline-flex; align-items: center; gap: 0.75rem; border: none; font-size: 1rem;">
+                  <i class="fa-solid fa-file-pdf"></i> Download Hasil (PDF)
+                </button>
+                <a href="/asesmen" class="btn btn-outline btn-lg" style="display: inline-flex; align-items: center; gap: 0.75rem; font-size: 1rem; text-decoration: none;">
+                  <i class="fa-solid fa-rotate-right"></i> Ulangi Kuesioner
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
 
     </div>
-  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>
-        <strong style="color: var(--accent)">OrganCek</strong> &mdash;
-        Bukan pengganti diagnosis medis profesional.
-      </p>
-    </div>
-  </footer>
+    <footer style="margin-top: 2rem;">
+      <div class="container">
+        <p><strong style="color: var(--accent)">OrganCek</strong> &mdash; Alat skrining kesehatan mandiri. Bukan pengganti diagnosis medis profesional.</p>
+        <p class="mt-1">Selalu konsultasikan kesehatan Anda dengan dokter yang berkompeten.</p>
+      </div>
+    </footer>
 
-  <script src="/js/app.js"></script>
-  <script src="/js/hasil.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/hasil.js"></script>
 </body>
-
 </html>

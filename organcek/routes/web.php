@@ -11,6 +11,10 @@ Route::get('/kuesioner', function () {
     return view('kuesioner');
 });
 
+Route::get('/asesmen', function () {
+    return view('asesmen');
+});
+
 Route::get('/edukasi', function () {
     return view('edukasi');
 });

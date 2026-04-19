@@ -326,7 +326,7 @@ function showAnswerRequired() {
 async function finishQuiz() {
   const w = parseFloat(document.getElementById('input-weight').value);
   const h = parseFloat(document.getElementById('input-height').value);
-  
+
   // Save organs and answers to session immediately so hasil page can show details
   Session.setOrgans(selectedOrgans);
   Session.setAnswers(answers);
@@ -352,12 +352,12 @@ async function finishQuiz() {
     });
 
     const result = await response.json();
-    
+
     if (result.status === 'success') {
       Session.setScores(result.data.scores);
       // BMI returned by server is set here
       Session.setBMI(result.data.bmi_data);
-      
+
       // Auto-redirect to hasil
       setTimeout(() => { window.location.href = '/hasil'; }, 2000);
     } else {
