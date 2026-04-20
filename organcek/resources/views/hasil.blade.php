@@ -68,7 +68,7 @@
             <div class="action-area">
               <div style="display: flex; gap: 1rem; margin-top: 1rem; justify-content: center; flex-wrap: wrap;">
                 <button id="btn-download-pdf" class="btn btn-primary btn-lg anim-pulse" style="display: inline-flex; align-items: center; gap: 0.75rem; border: none; font-size: 1rem;">
-                  <i class="fa-solid fa-file-pdf"></i> Download Hasil (PDF)
+                  <i class="fa-solid fa-image"></i> Download Hasil (Gambar)
                 </button>
                 <a href="/asesmen" class="btn btn-outline btn-lg" style="display: inline-flex; align-items: center; gap: 0.75rem; font-size: 1rem; text-decoration: none;">
                   <i class="fa-solid fa-rotate-right"></i> Ulangi Kuesioner
@@ -83,12 +83,16 @@
 
     <footer style="margin-top: 2rem;">
       <div class="container">
-        <p><strong style="color: var(--accent)">OrganCek</strong> &mdash; Alat skrining kesehatan mandiri. Bukan pengganti diagnosis medis profesional.</p>
-        <p class="mt-1">Selalu konsultasikan kesehatan Anda dengan dokter yang berkompeten.</p>
+        <p>
+          <strong style="color: var(--accent)">OrganCheck</strong> &mdash;
+          Alat skrining kesehatan mandiri berbasis gejala. <strong>BUKAN PENGGANTI DIAGNOSIS MEDIS PROFESIONAL.</strong>
+        </p>
+        <p class="mt-1">Hasil kuesioner ini tidak menggantikan pemeriksaan oleh tenaga medis profesional.
+          Selalu konsultasikan kondisi kesehatan Anda dengan dokter yang berkompeten.</p>
       </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/hasil.js"></script>
 </body>

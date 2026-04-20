@@ -25,7 +25,7 @@ class KuesionerController extends Controller
 
         $weight = $validated['weight'];
         $heightCm = $validated['height'];
-        
+
         $heightM = $heightCm / 100;
         $bmi = $weight / ($heightM * $heightM);
 
@@ -44,14 +44,14 @@ class KuesionerController extends Controller
         foreach ($validated['answers'] as $organ => $answers) {
             $totalQuestions = count(array_filter($answers, fn($v) => $v !== null));
             $maxPossible = $totalQuestions * 2;
-            
+
             $score = 0;
             foreach ($answers as $val) {
                 if ($val !== null) {
-                    $score += (int)$val;
+                    $score += (int) $val;
                 }
             }
-            
+
             $percentage = ($maxPossible > 0) ? ($score / $maxPossible) * 100 : 0;
 
             // Apply BMI modifier

@@ -7,9 +7,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/kuesioner', function () {
-    return view('kuesioner');
-});
 
 Route::get('/asesmen', function () {
     return view('asesmen');

@@ -1621,3 +1621,245 @@ footer {
   border-color: var(--ginjal);
   box-shadow: 0 0 25px var(--ginjal-glow);
 }
+
+
+/* ===========================
+   EDUKASI PAGE (REDESIGNED)
+   =========================== */
+
+.edukasi-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* --- Organ Tabs (Full Width, Rectangular) --- */
+.organ-tabs {
+  display: flex;
+  width: 100%;
+  gap: 4px;
+  /* Sedikit jarak antar tab */
+  margin-bottom: 0;
+  /* Menempel dengan card intro */
+}
+
+.organ-tab {
+  flex: 1;
+  /* Membagi lebar rata */
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  /* Menyatu dengan border bawah nantinya */
+  padding: 0.75rem 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  /* Radius hanya di atas, match --radius-lg */
+}
+
+
+.organ-tab.active {
+  background: var(--bg-card);
+  /* Match the panel card background */
+  color: var(--text-primary);
+  border: 2px solid var(--oc);
+  /* Garis warna di atas saat aktif */
+  border-bottom: 1px solid var(--bg-card);
+  /* Mask the line below */
+  margin-bottom: -1px;
+  /* Overlap border to blend */
+  padding-bottom: calc(0.75rem + 1px);
+  /* Keep visual balance */
+  position: relative;
+  z-index: 2;
+}
+
+/* Definisi variabel warna OC untuk setiap organ tab */
+.organ-tab[data-organ="jantung"] {
+  --oc: var(--jantung);
+}
+
+.organ-tab[data-organ="hati"] {
+  --oc: var(--hati);
+}
+
+.organ-tab[data-organ="paru"] {
+  --oc: var(--paru);
+}
+
+.organ-tab[data-organ="ginjal"] {
+  --oc: var(--ginjal);
+}
+
+/* --- Edukasi content panel --- */
+.edu-panel {
+  display: none;
+  animation: fadeIn 0.35s ease;
+}
+
+.edu-panel.active {
+  display: block;
+}
+
+/* Kontainer Utama (Kartu Lebar) */
+.edu-organ-intro {
+  display: flex;
+  align-items: center;
+  /* Teks rata tengah secara vertikal dengan gambar */
+  gap: 2.5rem;
+  /* Jarak antara kotak gambar dan teks */
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  /* Pojok atas tajam agar blend dengan tab */
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  /* JARAK ANTARA CARD OVERVIEW DAN DO&DONT */
+  position: relative;
+  z-index: 1;
+}
+
+/* Kotak Ikon Organ (Kiri) - Mengotak seperti Asesmen */
+.edu-organ-icon-box {
+  width: 120px;
+  height: 120px;
+  background: var(--og);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* Mencegah kotak gambar mengecil */
+  box-shadow: 0 10px 30px var(--og);
+}
+
+.edu-organ-icon-box img {
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+}
+
+/* Area teks (Kanan) */
+.edu-organ-text {
+  flex: 1;
+}
+
+.edu-organ-text h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--oc);
+  margin-bottom: 0.5rem;
+}
+
+.edu-organ-text p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Penyesuaian responsif untuk layar kecil/HP */
+@media (max-width: 768px) {
+  .edu-organ-intro {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .edu-organ-text {
+    text-align: center;
+  }
+}
+
+/* --- Do & Don't Grid --- */
+.do-dont-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .do-dont-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.do-card,
+.dont-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.do-card {
+  border: 2px solid var(--success);
+}
+
+.dont-card {
+  border: 2px solid var(--danger);
+}
+
+.do-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--success);
+}
+
+.dont-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--danger);
+}
+
+.do-dont-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.do-dont-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.do-dont-list li .li-icon {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.do-dont-list.do-list li .li-icon {
+  color: var(--success);
+}
+
+.do-dont-list.dont-list li .li-icon {
+  color: var(--danger);
+}
+
+.do-dont-list li strong {
+  font-weight: normal;
+  /* emoji tidak perlu bold */
+}

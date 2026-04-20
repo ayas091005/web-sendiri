@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     selectedOrgans.push(organ);
                     card.classList.add("selected");
                 }
-                
+
                 // Sort by standard order defined in app.js
                 if (typeof ORGAN_ORDER !== 'undefined') {
                     selectedOrgans.sort((a, b) => ORGAN_ORDER.indexOf(a) - ORGAN_ORDER.indexOf(b));
@@ -69,11 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateOrganSelectionUI() {
         btnLanjut.disabled = selectedOrgans.length === 0;
-        
+
         if (cbPilihSemua) {
             cbPilihSemua.checked = selectedOrgans.length === organCards.length;
         }
-        
+
         const hint = document.getElementById("select-hint");
         if (selectedOrgans.length === 0) {
             hint.innerHTML = `<i class="fa-solid fa-circle-info"></i> Pilih minimal satu organ untuk melanjutkan`;
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cbPilihSemua.addEventListener('change', (e) => {
             const isChecked = e.target.checked;
             selectedOrgans = [];
-            
+
             organCards.forEach(card => {
                 const organ = card.dataset.organ;
                 if (isChecked) {
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     card.classList.remove('selected');
                 }
             });
-            
+
             if (typeof ORGAN_ORDER !== 'undefined') {
                 selectedOrgans.sort((a, b) => ORGAN_ORDER.indexOf(a) - ORGAN_ORDER.indexOf(b));
             }
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.style.borderColor = organ.color;
                 card.style.background = organ.glow;
             }
-            
+
             // UI setup for custom option appearance
             let customStyle = '';
             if (isSelected) {

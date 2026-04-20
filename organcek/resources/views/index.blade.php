@@ -316,9 +316,10 @@
     <div class="container">
       <p>
         <strong style="color: var(--accent)">OrganCheck</strong> &mdash;
-        Alat skrining kesehatan mandiri. Bukan pengganti diagnosis medis profesional.
+        Alat skrining kesehatan mandiri berbasis gejala. <strong>BUKAN PENGGANTI DIAGNOSIS MEDIS PROFESIONAL.</strong>
       </p>
-      <p class="mt-1">Selalu konsultasikan kesehatan Anda dengan dokter yang berkompeten.</p>
+      <p class="mt-1">Hasil kuesioner ini tidak menggantikan pemeriksaan oleh tenaga medis profesional.
+        Selalu konsultasikan kondisi kesehatan Anda dengan dokter yang berkompeten.</p>
     </div>
   </footer>
 

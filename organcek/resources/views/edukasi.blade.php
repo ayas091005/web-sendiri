@@ -27,39 +27,24 @@
     </ul>
   </nav>
 
-  <div class="page-wrapper">
-    <!-- ===== DISCLAIMER (Moved to Top) ===== -->
-    <section class="section" style="padding-top: 2.5rem; padding-bottom: 0;">
-      <div class="container">
-        <div class="disclaimer-banner" style="border-color: var(--danger); background: rgba(239, 68, 68, 0.1);">
-          <i class="fa-solid fa-triangle-exclamation" style="color: var(--danger);"></i>
-          <span style="color: #FFBAB6;">
-            <strong style="color: var(--danger);">Disclaimer:</strong> OrganCek adalah alat <em>skrining mandiri</em>
-            berbasis gejala dan <strong>bukan merupakan alat diagnostik medis</strong>.
-            Hasil kuesioner ini tidak menggantikan pemeriksaan oleh tenaga medis profesional.
-            Selalu konsultasikan kondisi kesehatan Anda dengan dokter yang berkompeten.
-            Data Anda <strong>tidak disimpan</strong> dan akan terhapus otomatis saat browser ditutup.
-          </span>
-        </div>
-      </div>
-    </section>
+  <div class="page-wrapper" style="padding-top: var(--nav-height);">
+    <div class="disclaimer-ribbon">
+      <i class="fa-solid fa-triangle-exclamation"></i> <strong>Disclaimer:</strong> Tes ini hanya untuk prediksi awal
+      dan tidak menggantikan diagnosis medis profesional.
+    </div>
 
     <div class="edukasi-wrapper">
 
       <!-- Page Header -->
-      <div class="text-center mb-4 anim-fadeup">
-        <div class="section-label"><i class="fa-solid fa-book-medical"></i> Panduan Kesehatan</div>
-        <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 0.75rem;">
-          Do <span class="gradient-text">&</span> Don't
-          <br /><span style="font-size: 0.65em; color: var(--text-secondary); font-weight: 400;">Panduan Kesehatan Organ
-            Vital</span>
+      <div class="text-center mb-3 anim-fadeup">
+        <h1
+          style="font-family: 'Poppins', sans-serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 0.75rem; line-height: 1.1;">
+          <span class="gradient-text" style="display: inline-block; margin-bottom: -0.1em;">Panduan Kesehatan</span>
+          <br /><span style="font-size: 0.65em; font-weight: 650;">Know More About Your Body</span>
         </h1>
         <p
           style="color: var(--text-secondary); font-size: 0.92rem; max-width: 560px; margin: 0 auto; line-height: 1.8;">
           Panduan gaya hidup berbasis bukti ilmiah untuk menjaga kesehatan organ Anda.
-          Jika Anda telah mengisi kuesioner, organ berisiko tinggi akan diberi penanda khusus
-          <span
-            style="display:inline-block; width:8px; height:8px; background: var(--danger); border-radius: 50; vertical-align: middle;"></span>.
         </p>
       </div>
 
@@ -90,9 +75,11 @@
   <footer>
     <div class="container">
       <p>
-        <strong style="color: var(--accent)">OrganCek</strong> &mdash;
-        Bukan pengganti diagnosis medis profesional. Data Anda tidak disimpan secara permanen.
+        <strong style="color: var(--accent)">OrganCheck</strong> &mdash;
+        Alat skrining kesehatan mandiri berbasis gejala. <strong>BUKAN PENGGANTI DIAGNOSIS MEDIS PROFESIONAL.</strong>
       </p>
+      <p class="mt-1">Hasil kuesioner ini tidak menggantikan pemeriksaan oleh tenaga medis profesional.
+        Selalu konsultasikan kondisi kesehatan Anda dengan dokter yang berkompeten.</p>
     </div>
   </footer>
 
