@@ -21,7 +21,7 @@
     </a>
     <ul class="navbar-nav">
       <li><a href="/" class="nav-link" data-page="home">Beranda</a></li>
-      <li><a href="/kuesioner" class="nav-link" data-page="kuis">Kuesioner</a></li>
+      <li><a href="/asesmen" class="nav-link" data-page="kuis">Asesmen</a></li>
       <li><a href="/hasil" class="nav-link" data-page="hasil">Hasil</a></li>
       <li><a href="/edukasi" class="nav-link active" data-page="edukasi">Edukasi</a></li>
     </ul>
