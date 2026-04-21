@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hasil Asesmen - OrganCek</title>
+  <title>Hasil Asesmen - OrganCheck</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
@@ -19,7 +19,7 @@
   <nav class="navbar">
     <a href="/" class="navbar-brand">
       <div class="navbar-logo"><i class="fa-solid fa-stethoscope"></i></div>
-      <span class="navbar-title">Organ<span>Cek</span></span>
+      <span class="navbar-title">Organ<span>Check</span></span>
     </a>
     <ul class="navbar-nav">
       <li><a href="/" class="nav-link" data-page="home">Beranda</a></li>

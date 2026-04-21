@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edukasi Kesehatan — OrganCek</title>
+  <title>Edukasi Kesehatan — OrganCheck</title>
   <meta name="description"
     content="Panduan Do & Don't kesehatan untuk jantung, hati, paru-paru, dan ginjal berdasarkan hasil kuesioner Anda." />
   <link rel="stylesheet" href="/css/style.css" />
@@ -20,7 +20,7 @@
   <nav class="navbar">
     <a href="/" class="navbar-brand">
       <div class="navbar-logo"><i class="fa-solid fa-stethoscope"></i></div>
-      <span class="navbar-title">Organ<span>Cek</span></span>
+      <span class="navbar-title">Organ<span>Check</span></span>
     </a>
     <ul class="navbar-nav">
       <li><a href="/" class="nav-link" data-page="home">Beranda</a></li>
